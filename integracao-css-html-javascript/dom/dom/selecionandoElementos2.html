@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div wb-attrib>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>
+        document.querySelector('#primeiro').classList.add("destaque") // aq e obrigatoro # ser for pegar um Id
+            //  document.querySelector(): pega o primeiro valor passado ser tiver mais de 1
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add("destaque"))
+            //document.querySelectorAll(): volta uma node list
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove("destaque"))
+
+        selecionar('div')
+        deselecionar('*')
+        selecionar('.terceiro.ultimo')
+        deselecionar('*')
+        selecionar(':not(#primeiro)')
+        deselecionar('*')
+        selecionar(':nth-child(1)') // pega os filho da tag dependendo do paramentro
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)') // pega os filho da tag dependendo do paramentro
+        deselecionar('*')
+        selecionar('[wb-attrib]') // pega os filho da tag dependendo do paramentro
+    </script>
+</body>
+
+</html>

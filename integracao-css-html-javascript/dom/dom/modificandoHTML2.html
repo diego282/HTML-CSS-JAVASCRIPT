@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        div.innerHTML = "texto alterado" // vai mudar  a variavel
+            //div.outerHTML = "Texto alterado" // muda tanto a variavel como o proprio elemento
+        div.insertAdjacentHTML('beforebegin', '<p> Antes Inicio</p>') // coloca oq quiser antes da proprio elemento
+        div.insertAdjacentHTML('afterbegin', '<p> Depois Inicio</p>') // coloca oq quiser depois do elemento
+        div.insertAdjacentHTML('beforeend', '<p> Depois Inicio</p>') // coloca oq quiser antes do fim do elemento
+        div.insertAdjacentHTML('afterend', '<p> Depois fim</p>') // coloca oq quiser depois do fim do elemento
+
+        //somente texto (sem tags)
+        console.log(div.innerText) // pega so o texto
+    </script>
+</body>
+
+</html>
